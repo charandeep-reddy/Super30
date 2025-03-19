@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pattern</title>
+    <style>
+      #pattern {
+        font-family: monospace;
+        white-space: pre;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="pattern"></div>
+
+    <script>
+      let pattern = document.getElementById("pattern");
+      let rows = 5
+      let patternText = "";
+
+      for (let i = 1; i <= rows; i++) {
+        if (i == 1 || i == rows) {
+          patternText += " ".repeat(rows - i) + "* ".repeat(i) + "\n";
+        } else {
+          patternText += " ".repeat(rows - i) + "*" + " ".repeat(2 * i - 3) + "*\n";
+        }
+      }
+      
+      pattern.textContent = patternText;
+    </script>
+  </body>
+</html>
